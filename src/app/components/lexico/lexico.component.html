@@ -1,0 +1,31 @@
+<div class="continer">
+    <h1>Análisis léxico <b class="text-danger"> {{expresionRegular}} </b> </h1>
+</div>
+
+<div class="row m-2">
+    <div class="col">
+        <input #termino name="termino" [(ngModel)]="inputChar" type="text" class="form-control" (keyup)="analizarCaracter(termino.value)" placeholder="Ingrese el carácter">
+    </div>
+    <button type="button" (click)="inicializar()" class="btn btn-warning">Reiniciar</button>
+
+</div>
+
+<div class="row m-3">
+    <h2>Cadena: </h2>
+    <div class="container">
+        <p class="text-danger font-weight-bold display-3">{{cadena}}</p>
+    </div>
+</div>
+
+<div class="row m-3">
+    <h2>Historial: </h2>
+    <div class="container">
+        <ul>
+            <li *ngFor="let line of historial" class="text-info display-4">
+                {{ line }}
+            </li>
+
+        </ul>
+    </div>
+
+</div>
